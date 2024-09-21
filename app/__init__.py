@@ -10,9 +10,9 @@ from firebase_admin import credentials
 # firebase_credentials = f"C:\Users\hp\OneDrive\Desktop\final project program\ai-project-backend-main\fashion-ai-cc420-firebase-adminsdk-c8f4s-fd131ade1f.json"
 
 # cred = credentials.Certificate(firebase_credentials)
-# firebase_admin.initialize_app(cred)
-firebase_cred = os.path.join(os.getcwd(),'firebase_auth.json')
-print(firebase_cred)
+# firebase_admin.initialize_app(credp)
+
+firebase_cred = os.path.join(os.getcwd(),"app",'firebase_auth.json')
 cred = credentials.Certificate(firebase_cred)
 firebase_admin.initialize_app(cred)
 
@@ -53,7 +53,6 @@ def create_app():
     DRESS_PATH = os.path.join(app.config['SEGMENTED_IMGS'],'dress')
     SKIN_FOLDER = os.path.join(app.config['SEGMENTED_IMGS'], 'skin')
 
-
     # @app.after_request
     # def add_cors_headers(response):
     #     response.headers.add('Access-Control-Allow-Origin', '*')  # Allow all origins, or specify a specific one like 'http://localhost:3000'
@@ -65,6 +64,7 @@ def create_app():
     def setup():
         g.csv_helper = CSVHelper(app.config['CSV_FILE'])
         g.csv_helper.initialize_csv()
+       
 
     # Ensure the upload folder exists
     if not os.path.exists(app.config['UPLOAD_FOLDER']):

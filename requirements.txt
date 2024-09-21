@@ -1,6 +1,10 @@
-Flask
+flask
 firebase-admin
 bcrypt
 scikit-learn
-
-# UhaPK2YcBxWiQWCH
+colorgram.py
+opencv-python
+mediapipe
+torch
+pandas
+flask-cors
